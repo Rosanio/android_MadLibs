@@ -107,13 +107,45 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="gENERATE A sTANDARD sTORY"
             android:id="@+id/submitEntriesButton"
             android:layout_marginBottom="0dp"
             android:background="@color/colorAccent"
-            android:textColor="@color/colorIcons" />
+            android:textColor="@color/colorIcons"
+            android:textAllCaps="false" />
     </LinearLayout>
 
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputFields"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:id="@+id/radioGroupView">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option 1"
+            android:id="@+id/oneRadioButton"
+            android:layout_below="@+id/inputFields"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:allowUndo="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option 2"
+            android:id="@+id/twoRadioButton" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option 3"
+            android:id="@+id/threeRadioButton" />
+    </RadioGroup>
 
 
 </RelativeLayout>

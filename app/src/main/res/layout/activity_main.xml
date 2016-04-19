@@ -40,7 +40,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="Go!"
             android:id="@+id/submitEntriesButton"
             android:layout_marginBottom="0dp"
             android:background="@color/colorAccent"

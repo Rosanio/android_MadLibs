@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class StandardActivity extends AppCompatActivity {
 
@@ -20,6 +22,7 @@ public class StandardActivity extends AppCompatActivity {
     private EditText mVerbEditText;
     private EditText mAnimalEditText;
     private EditText mAdjectiveEditText;
+    private RadioGroup radioGroup;
 
 
     public void hideKeyboard(Activity activity) {
@@ -59,10 +62,14 @@ public class StandardActivity extends AppCompatActivity {
         mVerbEditText = (EditText) findViewById(R.id.verbEditText);
         mAnimalEditText = (EditText) findViewById(R.id.animalEditText);
         mAdjectiveEditText = (EditText) findViewById(R.id.adjectiveEditText);
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroupView);
 
         mSubmitEntries.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                RadioButton rb = (RadioButton) radioGroup.findViewById(radioGroup.getCheckedRadioButtonId());
+                String radioOption = rb.getText().toString();
                 String name = mNameEditText.getText().toString();
                 String place = mPlaceEditText.getText().toString();
                 String verb = mVerbEditText.getText().toString();
@@ -75,10 +82,12 @@ public class StandardActivity extends AppCompatActivity {
                 intent.putExtra("verb", verb);
                 intent.putExtra("animal", animal);
                 intent.putExtra("adjective", adjective);
+                intent.putExtra("option", radioOption);
                 startActivity(intent);
 
             }
         });
 
     }
+
 }

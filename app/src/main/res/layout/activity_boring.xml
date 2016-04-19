@@ -107,13 +107,21 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="Generate a Boring Story!"
             android:id="@+id/submitEntriesButton"
             android:layout_marginBottom="0dp"
             android:background="@color/colorAccent"
             android:textColor="@color/colorIcons" />
     </LinearLayout>
 
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New ToggleButton"
+        android:id="@+id/toggleButton"
+        android:layout_above="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="54dp" />
 
 
 </RelativeLayout>

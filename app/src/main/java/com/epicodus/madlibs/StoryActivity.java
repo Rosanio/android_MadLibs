@@ -19,11 +19,12 @@ public class StoryActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if(intent.getStringExtra("storyType").equals("Standard")) {
             String name = intent.getStringExtra("name");
+            String option = intent.getStringExtra("option");
             String place = intent.getStringExtra("place");
             String verb = intent.getStringExtra("verb");
             String animal = intent.getStringExtra("animal");
             String adjective = intent.getStringExtra("adjective");
-            mStoryTextView.setText(name + " woke up in a(n) " + place + ". 'Where the hell am I', wondered " + name + ". Suddenly, " + name + " entered a frenzied panic. 'I forgot to " + verb + " the " + animal + "', " + name + " said to themselves. They " + adjective + " ran home to " + verb + " their " + animal + ".");
+            mStoryTextView.setText(option + name + " woke up in a(n) " + place + ". 'Where the hell am I', wondered " + name + ". Suddenly, " + name + " entered a frenzied panic. 'I forgot to " + verb + " the " + animal + "', " + name + " said to themselves. They " + adjective + " ran home to " + verb + " their " + animal + ".");
         } else if(intent.getStringExtra("storyType").equals("Boring")) {
             String name = intent.getStringExtra("name");
             String workplace = intent.getStringExtra("workplace");
