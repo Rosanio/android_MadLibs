@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mSpinner = (Spinner) findViewById(R.id.spinner);
+        mSpinner = (Spinner) findViewById(R.id.storyTypeSpinner);
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, storiesArray);
         mSpinner.setAdapter(adapter);
 
