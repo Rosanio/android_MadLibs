@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 
 public class ExcitingActivity extends AppCompatActivity {
@@ -25,6 +26,7 @@ public class ExcitingActivity extends AppCompatActivity {
     private EditText mVerbEditText;
     private EditText mAnimalEditText;
     private EditText mAdjectiveEditText;
+    private SeekBar mSeekBar;
 
 
     public void hideKeyboard(Activity activity) {
@@ -64,6 +66,7 @@ public class ExcitingActivity extends AppCompatActivity {
         mVerbEditText = (EditText) findViewById(R.id.verbEditText);
         mAnimalEditText = (EditText) findViewById(R.id.animalEditText);
         mAdjectiveEditText = (EditText) findViewById(R.id.adjectiveEditText);
+        mSeekBar = (SeekBar) findViewById(R.id.seekBar);
 
         mSubmitEntries.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +76,7 @@ public class ExcitingActivity extends AppCompatActivity {
                 String verb = mVerbEditText.getText().toString();
                 String animal = mAnimalEditText.getText().toString();
                 String adjective = mAdjectiveEditText.getText().toString();
+                int seekBarProgress = mSeekBar.getProgress();
                 Intent intent = new Intent(ExcitingActivity.this, StoryActivity.class);
                 intent.putExtra("storyType", "Exciting");
                 intent.putExtra("name", name);
@@ -80,6 +84,7 @@ public class ExcitingActivity extends AppCompatActivity {
                 intent.putExtra("verb", verb);
                 intent.putExtra("animal", animal);
                 intent.putExtra("adjective", adjective);
+                intent.putExtra("progress", seekBarProgress);
                 startActivity(intent);
 
             }

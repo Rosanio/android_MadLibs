@@ -114,6 +114,12 @@
             android:textColor="@color/colorIcons" />
     </LinearLayout>
 
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_below="@+id/inputFields"
+        android:max="20" />
 
 
 </RelativeLayout>
