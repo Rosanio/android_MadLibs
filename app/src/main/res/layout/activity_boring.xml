@@ -55,8 +55,8 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/placeEditText"
-                android:hint="Enter a place" />
+                android:id="@+id/workplaceEditText"
+                android:hint="Enter a workplace" />
         </LinearLayout>
 
         <LinearLayout
@@ -79,8 +79,8 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/animalEditText"
-                android:hint="Enter an animal" />
+                android:id="@+id/foodEditText"
+                android:hint="Enter a food" />
         </LinearLayout>
 
         <LinearLayout

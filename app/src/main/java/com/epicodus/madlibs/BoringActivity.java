@@ -21,9 +21,9 @@ public class BoringActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
     private Button mSubmitEntries;
     private EditText mNameEditText;
-    private EditText mPlaceEditText;
+    private EditText mWorkplaceEditText;
     private EditText mVerbEditText;
-    private EditText mAnimalEditText;
+    private EditText mFoodEditText;
     private EditText mAdjectiveEditText;
 
 
@@ -60,28 +60,27 @@ public class BoringActivity extends AppCompatActivity {
 
         mSubmitEntries = (Button) findViewById(R.id.submitEntriesButton);
         mNameEditText = (EditText) findViewById(R.id.nameEditText);
-        mPlaceEditText = (EditText) findViewById(R.id.placeEditText);
+        mWorkplaceEditText = (EditText) findViewById(R.id.workplaceEditText);
         mVerbEditText = (EditText) findViewById(R.id.verbEditText);
-        mAnimalEditText = (EditText) findViewById(R.id.animalEditText);
+        mFoodEditText = (EditText) findViewById(R.id.foodEditText);
         mAdjectiveEditText = (EditText) findViewById(R.id.adjectiveEditText);
 
         mSubmitEntries.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = mNameEditText.getText().toString();
-                String place = mPlaceEditText.getText().toString();
+                String workplace = mWorkplaceEditText.getText().toString();
                 String verb = mVerbEditText.getText().toString();
-                String animal = mAnimalEditText.getText().toString();
+                String food = mFoodEditText.getText().toString();
                 String adjective = mAdjectiveEditText.getText().toString();
                 Intent intent = new Intent(BoringActivity.this, StoryActivity.class);
                 intent.putExtra("storyType", "Boring");
                 intent.putExtra("name", name);
-                intent.putExtra("place", place);
+                intent.putExtra("workplace", workplace);
                 intent.putExtra("verb", verb);
-                intent.putExtra("animal", animal);
+                intent.putExtra("food", food);
                 intent.putExtra("adjective", adjective);
                 startActivity(intent);
-
             }
         });
 
