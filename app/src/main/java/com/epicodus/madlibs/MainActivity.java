@@ -4,74 +4,57 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button mSubmitEntries;
-    private EditText mNameEditText;
-    private EditText mPlaceEditText;
-    private EditText mVerbEditText;
-    private EditText mAnimalEditText;
-    private EditText mAdjectiveEditText;
-
-    public void hideKeyboard(Activity activity) {
-        InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
-    }
-
-    public void setupUI(View view) {
-        if(!(view instanceof EditText)) {
-            view.setOnTouchListener(new View.OnTouchListener() {
-                public boolean onTouch(View v, MotionEvent event) {
-                    hideKeyboard(MainActivity.this);
-                    return false;
-                }
-            });
-        }
-
-        if(view instanceof ViewGroup) {
-            for(int i = 0; i < ((ViewGroup) view).getChildCount(); i++) {
-                View innerView = ((ViewGroup) view).getChildAt(i);
-                setupUI(innerView);
-            }
-        }
-    }
+    private String[] storiesArray = {"Standard", "Exciting", "Boring"};
+    private Spinner mSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setupUI(findViewById(R.id.parentContainer));
+
+        mSpinner = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, storiesArray);
+        mSpinner.setAdapter(adapter);
 
         mSubmitEntries = (Button) findViewById(R.id.submitEntriesButton);
-        mNameEditText = (EditText) findViewById(R.id.nameEditText);
-        mPlaceEditText = (EditText) findViewById(R.id.placeEditText);
-        mVerbEditText = (EditText) findViewById(R.id.verbEditText);
-        mAnimalEditText = (EditText) findViewById(R.id.animalEditText);
-        mAdjectiveEditText = (EditText) findViewById(R.id.adjectiveEditText);
 
         mSubmitEntries.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = mNameEditText.getText().toString();
-                String place = mPlaceEditText.getText().toString();
-                String verb = mVerbEditText.getText().toString();
-                String animal = mAnimalEditText.getText().toString();
-                String adjective = mAdjectiveEditText.getText().toString();
-                Intent intent = new Intent(MainActivity.this, StoryActivity.class);
-                intent.putExtra("name", name);
-                intent.putExtra("place", place);
-                intent.putExtra("verb", verb);
-                intent.putExtra("animal", animal);
-                intent.putExtra("adjective", adjective);
-                startActivity(intent);
+                String storyType = mSpinner.getSelectedItem().toString();
+//                String name = mNameEditText.getText().toString();
+//                String place = mPlaceEditText.getText().toString();
+//                String verb = mVerbEditText.getText().toString();
+//                String animal = mAnimalEditText.getText().toString();
+//                String adjective = mAdjectiveEditText.getText().toString();
+//                Log.d(TAG, storyType);
+//                Intent intent = new Intent(MainActivity.this, StoryActivity.class);
+//                intent.putExtra("name", name);
+//                intent.putExtra("place", place);
+//                intent.putExtra("verb", verb);
+//                intent.putExtra("animal", animal);
+//                intent.putExtra("adjective", adjective);
+//                startActivity(intent);
+                if (storyType .equals("Standard")) {
+                    Intent intent = new Intent(MainActivity.this, StandardActivity.class);
+                    startActivity(intent);
+                } else if (storyType.equals("Boring")) {
+                    Intent intent = new Intent(MainActivity.this, BoringActivity.class);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(MainActivity.this, ExcitingActivity.class);
+                    startActivity(intent);
+                }
             }
         });
+
     }
 }

@@ -17,11 +17,28 @@ public class StoryActivity extends AppCompatActivity {
         mStoryTextView = (TextView) findViewById(R.id.storyTextView);
 
         Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        String place = intent.getStringExtra("place");
-        String verb = intent.getStringExtra("verb");
-        String animal = intent.getStringExtra("animal");
-        String adjective = intent.getStringExtra("adjective");
-        mStoryTextView.setText(name + " woke up in a(n) " + place + ". 'Where the hell am I', wondered " + name + ". Suddenly, " + name + " entered a frenzied panic. 'I forgot to " + verb + " the " + animal + "', " + name + " said to themselves. They " + adjective + " ran home to " + verb + " their " + animal + ".");
+        if(intent.getStringExtra("storyType").equals("Standard")) {
+            String name = intent.getStringExtra("name");
+            String place = intent.getStringExtra("place");
+            String verb = intent.getStringExtra("verb");
+            String animal = intent.getStringExtra("animal");
+            String adjective = intent.getStringExtra("adjective");
+            mStoryTextView.setText(name + " woke up in a(n) " + place + ". 'Where the hell am I', wondered " + name + ". Suddenly, " + name + " entered a frenzied panic. 'I forgot to " + verb + " the " + animal + "', " + name + " said to themselves. They " + adjective + " ran home to " + verb + " their " + animal + ".");
+        } else if(intent.getStringExtra("storyType").equals("Boring")) {
+            String name = intent.getStringExtra("name");
+            String place = intent.getStringExtra("place");
+            String verb = intent.getStringExtra("verb");
+            String animal = intent.getStringExtra("animal");
+            String adjective = intent.getStringExtra("adjective");
+            mStoryTextView.setText(name + " woke up in a(n) " + place + ". 'Where the hell am I', wondered " + name + ". Suddenly, " + name + " entered a frenzied panic. 'I forgot to " + verb + " the " + animal + "', " + name + " said to themselves. They " + adjective + " ran home to " + verb + " their " + animal + ".");
+        } else {
+            String name = intent.getStringExtra("name");
+            String place = intent.getStringExtra("place");
+            String verb = intent.getStringExtra("verb");
+            String animal = intent.getStringExtra("animal");
+            String adjective = intent.getStringExtra("adjective");
+            mStoryTextView.setText(name + " woke up in a(n) " + place + ". 'Where the hell am I', wondered " + name + ". Suddenly, " + name + " entered a frenzied panic. 'I forgot to " + verb + " the " + animal + "', " + name + " said to themselves. They " + adjective + " ran home to " + verb + " their " + animal + ".");
+        }
+
     }
 }
