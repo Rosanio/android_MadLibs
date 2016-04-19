@@ -22,6 +22,6 @@ public class StoryActivity extends AppCompatActivity {
         String verb = intent.getStringExtra("verb");
         String animal = intent.getStringExtra("animal");
         String adjective = intent.getStringExtra("adjective");
-        mStoryTextView.setText(name + " woke up in a(n) " + place + ". 'Where the hell am I', wondered " + name + ". ");
+        mStoryTextView.setText(name + " woke up in a(n) " + place + ". 'Where the hell am I', wondered " + name + ". Suddenly, " + name + " entered a frenzied panic. 'I forgot to " + verb + " the " + animal + "', " + name + " said to themselves. They " + adjective + " ran home to " + verb + " their " + animal + ".");
     }
 }
